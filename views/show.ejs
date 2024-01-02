@@ -4,9 +4,9 @@
   <body>
     <%- include("./partials/nav.ejs")%>
     <h1>Show Page</h1>
-    <h2><%=animal.location%></h2>
+    <h2>Location: <%=animal.location%></h2>
     <a href="/animals/edit/<%=animal._id%>">Edit</a>
-    <h3><%=animal.spieces%></h3>
+    <h3>Animal species: <%=animal.species%></h3>
     <p>
       <%=animal.extinct ? "The animal is extinct":"The animal is not extinct"%>
     </p>

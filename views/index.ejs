@@ -5,12 +5,11 @@
     <%- include("./partials/nav.ejs")%>
     <h1>Animals list Index</h1>
     <p>click title to see more</p>
-
     <div class="animal-container">
       <% for (let i = 0; i < animals.length; ++i) { %>
-      <div class="anamal">
+      <div class="animal">
         <a href="/animals/<%= animals[i]._id %>" class="animal-title">
-          <%= animals[i].spieces %>
+          <%= animals[i].species %>
         </a>
         <!-- delete form goes here -->
         <!-- cta - call to action -->
@@ -24,7 +23,7 @@
           </form>
           <!-- Link to our edit page -->
           <a href="/animals/edit/<%= animals[i]._id %>/" class="animal-edit"
-            >Edit <%= animals[i].spieces %></a
+            >Edit <%= animals[i].species %></a
           >
         </div>
       </div>

@@ -1,4 +1,4 @@
-module.exports = { index, newForm, create, destroy, update, edit, show };
+module.exports = { index, newForm, create, destroy, update, seed, edit, show };
 /**
  * route controllers
  */
@@ -52,6 +52,19 @@ async function create(req, res) {
   }
   let newAnimal = await req.model.Animal.create(req.body);
   res.redirect("/animals");
+}
+
+async function seed(req, res) {
+  try {
+    // delete everything in the database
+    await req.model.Animal.deleteMany({});
+    // Create data in the database
+    await req.model.Animal.create(req.model.seedData);
+    // redirect back to the index
+    res.redirect("/animals");
+  } catch (error) {
+    res.send("something went wrong with your seeds");
+  }
 }
 
 async function show(req, res) {

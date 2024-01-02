@@ -5,8 +5,8 @@
     <%- include("./partials/nav.ejs")%>
     <h1>Editing <%= animal.spieces%></h1>
     <form action="/animals/<%= animal._id %>/?_method=PUT" method="post">
-      <label for="spieces">Spieces</label>
-      <input type="text" name="spieces" value="<%= animal.spieces%>" /><br />
+      <label for="species">Species</label>
+      <input type="text" name="species" value="<%= animal.species%>" /><br />
 
       <label for="location">Location</label>
       <input type="text" name="location" value="<%= animal.location%>" /> <br />

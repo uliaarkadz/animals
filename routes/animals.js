@@ -25,9 +25,10 @@ router.post("/", animalController.create);
 
 router.get("/edit/:id", animalController.edit);
 
-/**
- * SHOW
- */
+// Seed - GET
+router.get("/seed", animalController.seed);
+
+//SHOW
 router.get("/:id", animalController.show);
 
 module.exports = router;
