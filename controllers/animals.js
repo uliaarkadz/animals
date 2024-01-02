@@ -18,7 +18,7 @@ async function destroy(req, res) {
 }
 async function edit(req, res) {
   try {
-    // find the book to edit
+    // find the animal to edit
     let foundAnimal = await req.model.Animal.findById(req.params.id);
     res.render("edit.ejs", {
       animal: foundAnimal,

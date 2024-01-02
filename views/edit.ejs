@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+  <%- include("./partials/head.ejs") %>
   <body>
+    <%- include("./partials/nav.ejs")%>
     <h1>Editing <%= animal.spieces%></h1>
     <form action="/animals/<%= animal._id %>/?_method=PUT" method="post">
       <label for="spieces">Spieces</label>
