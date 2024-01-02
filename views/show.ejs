@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Show Page</h1>
+    <h2><%=animal.location%></h2>
+    <a href="/animals/edit/<%=animal._id%>">Edit</a>
+    <h3><%=animal.spieces%></h3>
+    <p><%=animal.extinct ? "I read this":"Still on the list"%></p>
+  </body>
+</html>

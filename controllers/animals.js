@@ -29,6 +29,11 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
+  if (req.body.extinct === "on") {
+    req.body.extinct = true;
+  } else {
+    req.body.extinct = false;
+  }
   let updatedAnimal = await req.model.Animal.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -38,11 +43,18 @@ async function update(req, res) {
 }
 
 async function create(req, res) {
+  if (req.body.extinct === "on") {
+    // if checked
+    req.body.extinct = true;
+  } else {
+    // if not checked
+    req.body.extinct = false;
+  }
   let newAnimal = await req.model.Animal.create(req.body);
   res.redirect("/animals");
 }
 
 async function show(req, res) {
-  let foundAnimal = await req.moel.Animal.findBYID(req.params.id);
+  let foundAnimal = await req.model.Animal.findById(req.params.id);
   res.render("show.ejs", { animal: foundAnimal });
 }

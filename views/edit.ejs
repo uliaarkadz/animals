@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Editing <%= animal.spieces%></h1>
+    <form action="/animals/<%= animal._id %>/?_method=PUT" method="post">
+      <label for="spieces">Spieces</label>
+      <input type="text" name="spieces" value="<%= animal.spieces%>" /><br />
+
+      <label for="location">Location</label>
+      <input type="text" name="location" value="<%= animal.location%>" /> <br />
+
+      <label for="lifeExpectancy">Life Expectancy</label>
+      <input
+        type="text"
+        name="lifeExpectancy"
+        value="<%= animal.lifeExpectancy%>"
+      />
+      <br />
+
+      <label for="extinct">Is animal extinct?</label>
+      <input type="checkbox" name="extinct" <% if(animal.extinct=== true){ %>
+      checked <% } %> /><br />
+
+      <input type="submit" value="Update Animal" />
+    </form>
+  </body>
+</html>
